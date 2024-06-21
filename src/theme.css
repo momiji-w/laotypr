@@ -1,0 +1,18 @@
+:root {
+    --background-color: #eff1f5;
+    --normal-text-color: #4c4f69;
+    --active-color: #04a5e5;
+    --inactive-color: #9ca0b0;
+    --success-color: #40a02b;
+    --error-color: #d20f39;
+    --caret-color: #04a5e5;
+    --input-bg-color: #ccd0da;
+
+    --input-size: 3rem;
+    --caret-size: 3.75rem;
+}
+
+button:focus,input:focus,select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--normal-text-color);
+}
