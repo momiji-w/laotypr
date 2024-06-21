@@ -1,15 +1,16 @@
 <script lang="ts">
     import Icon from "$lib/Icon/index.svelte";
 
+    import { base } from "$app/paths";
     import { page } from "$app/stores";
     import { goto } from "$app/navigation";
 
     function navigateToPath(path: string) {
-        if ($page.url.pathname === path) {
+        if ($page.url.pathname === base + path) {
             return;
         }
 
-        goto(path);
+        goto(base + path);
     }
 </script>
 
