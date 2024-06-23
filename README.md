@@ -29,7 +29,7 @@ npm run dev
 ### 4. Open the app in your browser
 Your app should be ready at [http://localhost:5173/](http://localhost:5173/)
 ## Notes
-This application and it's source code is free of use and can be modify however you want, but there is one thing that is prohibited is using this piece of software for commercial uses.
+This application and it's source code is free of use and can be modify however you want, but is prohibited from any commercial purposes.
 ## Credits
 - [monkeytype](https://monkeytype.com) for the inspiration and their awesome typing game.  
 - [Sinthala](https://github.com/OuiSinthala) and [Noumnim](https://github.com/Noumnim) for their help with the idea and other stuffs.
