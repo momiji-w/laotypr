@@ -3,7 +3,7 @@
     import { createEventDispatcher, onMount } from "svelte";
     import { isRunning, elapsedTime, currentTimeSelection } from "../../stores";
     import { fade } from "svelte/transition";
-    import { setConfig } from "$lib/utits";
+    import { setConfig } from "$lib/utils";
 
     const dispatch = createEventDispatcher();
 

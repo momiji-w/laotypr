@@ -23,6 +23,7 @@
         padding: 0.7rem;
         text-align: center;
         background-color: var(--normal-text-color);
+        z-index: 9999;
     }
     .tooltip:before {
         content: "";
@@ -32,5 +33,17 @@
         border-bottom: 5px solid var(--normal-text-color);
         border-right: 5px solid transparent;
         border-left: 5px solid transparent;
+    }
+    :global(.tooltip.top:before) {
+        top: auto;
+        bottom: -5px;
+        transform: rotate(-180deg);
+    }
+    :global(.tooltip.right:before, .tooltip.top.right:before) {
+        left: auto;
+        right: 1rem;
+    }
+    :global(.tooltip.left:before, .tooltip.top.left:before) {
+        left: 1rem;
     }
 </style>

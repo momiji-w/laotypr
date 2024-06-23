@@ -16,7 +16,9 @@
 
     import Icon from "$lib/Icon/index.svelte";
 
-    import { calcAcc, calcWPM } from "../utits";
+    import { calcAcc, calcWPM, roundTo2 } from "$lib/utils";
+
+    import { type history, setHistory } from "$lib/history";
 
     import { createEventDispatcher } from "svelte";
 
@@ -44,6 +46,19 @@
     }
 
     onMount(async () => {
+        const history: history = {
+            wpm: calcWPM($correctKeyStrokes, $elapsedTime),
+            accuracy: calcAcc($correctKeyStrokes, $totalKeyStrokes),
+            time: roundTo2($elapsedTime),
+            total_key: $totalKeyStrokes,
+            correct_key: $correctKeyStrokes,
+            timestamp: Math.floor(Date.now() / 1000),
+            mode: $currentMode,
+            sub_mode: getSubMode(),
+        };
+
+        setHistory(history);
+
         const ctx = resultChart.getContext("2d");
         const labels = [];
         const items = [];
@@ -151,7 +166,7 @@
                     {$elapsedTime}s
                 </h3>
             </div>
-            {#if $currentMode === GameMode.Article}
+            {#if $currentMode === GameMode.Quote}
                 <div class="flex flex-col">
                     <span class="text-2xl">source</span>
                     <h3 class="text-5xl font-bold">

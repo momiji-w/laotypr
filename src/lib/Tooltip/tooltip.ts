@@ -21,6 +21,7 @@ export const tooltip: Action<HTMLElement, string> = (el, message) => {
         tooltipDiv.forEach((elem) => {
             let item = elem as HTMLDivElement
 
+            let top = parentCoords.top + window.scrollY - item.offsetHeight - 10;
             let bottom = parentCoords.bottom + window.scrollY + 10;
             let left = parentCoords.left + window.scrollX;
             let right = parentCoords.right + window.scrollX - item.offsetWidth;
@@ -32,15 +33,15 @@ export const tooltip: Action<HTMLElement, string> = (el, message) => {
             });
 
             // Position Value Offset
-            let tooltipOffsetTop = parentCoords.top - item.offsetHeight;
+            let tooltipOffsetBottom = item.offsetHeight - parentCoords.bottom;
             let tooltipOffsetRight = window.innerWidth - item.offsetWidth - parentCoords.right;
             let tooltipOffsetLeft = parentCoords.left - item.offsetWidth;
 
             // Conditionals to align based on screen position/size
-            if (tooltipOffsetTop <= 0) {
-                item.classList.add('bottom');
+            if (tooltipOffsetBottom <= 0) {
+                item.classList.add('top');
                 tooltipComponent.$set({
-                    y: bottom
+                    y: top
                 })
             }
 
@@ -70,6 +71,13 @@ export const tooltip: Action<HTMLElement, string> = (el, message) => {
 
     el.addEventListener('focusin', addTooltip);
     el.addEventListener('focusout', removeTooltip);
+
+    var observer = new MutationObserver(function() {
+        if (!document.body.contains(el)) {
+            removeTooltip();
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
 
     return {
         destroy() {

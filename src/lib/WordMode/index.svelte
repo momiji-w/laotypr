@@ -8,7 +8,7 @@
     } from "../../stores";
     import { Timer } from "../timer";
     import { fade } from "svelte/transition";
-    import { setConfig } from "$lib/utits";
+    import { setConfig } from "$lib/utils";
 
     const dispatch = createEventDispatcher();
 

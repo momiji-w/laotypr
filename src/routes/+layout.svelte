@@ -12,7 +12,7 @@
     } from "../stores";
     import { onMount } from "svelte";
 
-    import { loadConfig } from "$lib/utits";
+    import { loadConfig } from "$lib/utils";
 
     let isLoading: boolean = true;
 

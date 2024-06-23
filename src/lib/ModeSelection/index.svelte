@@ -3,7 +3,7 @@
     import { createEventDispatcher, tick } from "svelte";
     import { fly } from "svelte/transition";
     import Icon from "$lib/Icon/index.svelte";
-    import { setConfig } from "$lib/utits";
+    import { setConfig } from "$lib/utils";
 
     let dispatch = createEventDispatcher();
 

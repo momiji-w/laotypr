@@ -15,7 +15,7 @@
     import QuoteMode from "$lib/QuoteMode/index.svelte";
     import Result from "$lib/Result/index.svelte";
     import { fade } from "svelte/transition";
-    import { calcWPM, roundTo2 } from "$lib/utits";
+    import { calcWPM, roundTo2 } from "$lib/utils";
     import { Timer } from "$lib/timer";
 
     let modeSelection: ModeSelection;

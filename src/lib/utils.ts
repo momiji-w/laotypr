@@ -47,3 +47,23 @@ export function calcWPM(correctKeyStrokes: number, time: number): number {
 export function calcAcc(correctKeyStrokes: number, totalKeyStrokes: number): number {
     return roundTo2(correctKeyStrokes / totalKeyStrokes) * 100
 }
+
+export function getDisplayTimestampFromUnix(unixTimestamp: number, get_time = true) {
+    const timestamp = new Date(Math.floor(unixTimestamp) * 1000)
+    const day = timestamp.getUTCDate().toString().padStart(2, "0");
+    const month = (timestamp.getUTCMonth() + 1).toString().padStart(2, "0");
+    const year = timestamp.getUTCFullYear();
+
+    const hours = timestamp.getHours().toString().padStart(2, "0");
+    const minutes = timestamp.getUTCMinutes().toString().padStart(2, "0");
+    const seconds = timestamp.getUTCSeconds().toString().padStart(2, "0");
+
+    const date = `${day}/${month}/${year}`
+    const time = `${hours}:${minutes}:${seconds}`;
+
+    if (get_time) {
+        return date + " " + time;
+    }
+
+    return date;
+}
