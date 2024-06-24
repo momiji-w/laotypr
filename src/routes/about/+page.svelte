@@ -12,6 +12,10 @@
                 class="font-bold underline">monkeytype</a
             >. it was originally my thesis project but i decided to make it
             public without all the BS that came with it.
+            <a
+                href="https://github.com/momiji-w/laotypr"
+                class="font-bold underline">Github repository</a
+            >
         </p>
     </div>
     <div class="mb-4">
@@ -49,19 +53,6 @@
                         <mo> &#215; 100</mo>
                     </mrow>
                 </math>
-            </li>
-        </ul>
-    </div>
-
-    <div class="mb-4">
-        <h1 class="text-3xl mb-3">Contributors:</h1>
-        <ul class="list-disc list-inside">
-            <li class="text-xl">
-                <a
-                    href="https://github.com/momiji-w"
-                    target="_blank"
-                    class="underline">momiji</a
-                >
             </li>
         </ul>
     </div>
