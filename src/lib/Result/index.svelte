@@ -37,7 +37,7 @@
         if ($currentMode === GameMode.Time) {
             return $currentTimeSelection.toString();
         }
-        
+
         if ($currentMode === GameMode.Word) {
             return $wordModeCount.toString();
         }
@@ -126,15 +126,13 @@
 </script>
 
 <div class="container flex flex-col mt-14">
-    <div
-        class="flex justify-around flex-wrap gap-4 max-sm:flex-col max-sm:items-center max-sm:gap-6"
-    >
-        <div class="w-full flex justify-center">
-            <div class="w-3/4 h-72">
-                <canvas bind:this={resultChart}> </canvas>
-            </div>
+    <div class="flex justify-around flex-wrap gap-4">
+        <div class="w-full flex justify-center h-72">
+            <canvas bind:this={resultChart}> </canvas>
         </div>
-        <div class="flex justify-between flex-wrap w-full">
+        <div
+            class="flex justify-between flex-wrap w-full gap-4 max-sm:flex-col max-sm:items-center max-sm:gap-6"
+        >
             <div class="flex flex-col">
                 <span class="text-2xl">wpm</span>
                 <h3 class="text-5xl font-bold">

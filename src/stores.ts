@@ -1,6 +1,6 @@
 import { writable, type Writable } from 'svelte/store';
-import words from './lib/dataset/wordData.json';
-import articles from './lib/dataset/articleData.json';
+import words from '$lib/dataset/wordData.json';
+import articles from '$lib/dataset/articleData.json';
 
 export enum GameMode {
     Time = "time",
